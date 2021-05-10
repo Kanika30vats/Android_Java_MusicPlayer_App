@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
              public void onClick(View v)
              {
                  mediaPlayer.start();
+                 mediaPlayer.setLooping(true);
                  /**
                   * This message was written to test the working of the Play Button.
                   * Toast.makeText(MainActivity.this, "Play", Toast.LENGTH_SHORT).show();
@@ -39,6 +40,20 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 mediaPlayer.pause();
+                /**
+                 *
+                 * This message was written to test the working of the Pause Button.
+                 * Toast.makeText(MainActivity.this, "Pause", Toast.LENGTH_SHORT).show();
+                 */
+            }
+        });
+
+        Button seekButton = (Button) findViewById(R.id.seek_button);
+        seekButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                mediaPlayer.seekTo(170000);
                 /**
                  *
                  * This message was written to test the working of the Pause Button.
