@@ -26,6 +26,16 @@ public class MainActivity extends AppCompatActivity
              public void onClick(View v)
              {
                  mediaPlayer.start();
+                 /**
+                  * Using asyn callback to be notified when song finishes.
+                  * In the meantime, we can do other things like respond to buttons from user.
+                  */
+                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                     @Override
+                     public void onCompletion(MediaPlayer mediaPlayer) {
+                         Toast.makeText(MainActivity.this, "I'm done", Toast.LENGTH_SHORT).show();
+                     }
+                 });
                  mediaPlayer.setLooping(true);
                  /**
                   * This message was written to test the working of the Play Button.
